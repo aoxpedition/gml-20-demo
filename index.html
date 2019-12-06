@@ -25,26 +25,26 @@
             h2 {
                 font-weight: 300;
             }
-                
+
             ul {
                 margin: 20px;
             }
             li {
                 margin-bottom: 1em;
             }
-            a {
+            li:nth-of-type(4n-3) a {
                 color: #4285f4;
             }
-            li:nth-child(2) a{
+            li:nth-of-type(4n-2) a{
                 color: #ea4235;
             }
-            li:nth-child(3) a{
+            li:nth-of-type(4n-1) a{
                 color: #fbbc04;
             }
-            li:nth-child(4) a{
+            li:nth-of-type(4n) a{
                 color: #34a853;
             }
- 
+
         </style>
     </head>
     <body>
@@ -52,22 +52,32 @@
         <h2>Style Demos</h2>
         <ul>
             <li>
-                <a href="top-nav_full">Video Hero</a> YouTube Embed Full Height/Width - Top Navigation<br> *Video must be clipped to hide video info and youtube logo
+                <a href="./youtube-embed.html">Video Hero</a> YouTube Embed Full Height/Width<br>
+                *Video must be clipped to hide video info and youtube logo
             </li>
             <li>
-                <a href="top-nav_full">Video Hero</a> MP4 Full Height/Width - Top Navigation
+                <a href="./top-nav_full.html">Video Hero</a> MP4 Full Height/Width<br>
+                Top Navigation - tranparent background, white after scrolling down
             </li>
             <li>
-                <a href="top-nav_mobile-sm">Video Hero</a> MP4 Full Height/Width Desktop, Small on Mobile - Top Navigation
+                <a href="./top-nav_mobile-sm.html">Video Hero</a> MP4 Full Height/Width Desktop, Small on Mobile<br>
+                Top Navigation - tranparent background, white after scrolling down
             </li>
             <li>
-                <a href="bot-nav_full">Video Hero</a> MP4 Full Height/Width - Bottom Navigation
+                <a href="./bot-nav_full.html">Video Hero</a> MP4 Full Height/Width<br>
+                Bottom Navigation - black gradient background, white after scrolling<br>
+                Enlarged GML logo, shrinks after scrolling<br>
+                Nav bar sticks to top after scrolling farther
             </li>
             <li>
-                <a href="bot-nav_mobile-sm">Video Hero</a> MP4 Full Height/Width Desktop, Small on Mobile - Bottom Navigation
+                <a href="./bot-nav_mobile-sm.html">Video Hero</a> MP4 Full Height/Width Desktop, Small on Mobile<br>
+                Bottom Navigation - black gradient background, white after scrolling<br>
+                Enlarged GML logo, shrinks after scrolling<br>
+                Mobile Nav below video instead of overlay<br>
+                Nav bar sticks to top after scrolling farther
             </li>
             <li>
-                <a href="countdown-clocks">Countdown Clocks</a>
+                <a href="countdown-clocks.html">Countdown Clocks</a>
             </li>
         </ul>
     </body>
