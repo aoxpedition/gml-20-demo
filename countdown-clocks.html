@@ -1,0 +1,477 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GML 2020 Preview Site</title>
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <style>
+            /* Presentation */
+            *{
+                box-sizing: inherit;
+                font: inherit;
+            }
+            html, body, ul, li {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 1.44;
+                color: #444444;
+                box-sizing: border-box;
+            }
+            body{
+                padding-top: 64px;
+            }
+            nav {
+                box-sizing: border-box;
+                padding: 4px 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                width:100%;
+                height: 64px;
+                background: white;
+            }
+            nav img{
+                margin: 0 4px 0 8px;
+                height: 30px;
+            }
+            .nav-collapse{
+                display:flex;
+                flex-grow: 1;
+                justify-content: space-between;
+                align-items: center;
+            }
+            nav ul{
+                flex-grow: 1;
+                color: #aaaaaa;
+                font-family: 'Roboto', sans-serif;
+                align-items: center;
+                display: flex;
+                font-size: 14px;
+                font-weight: 400;
+                list-style: none;
+                margin: 0;
+            }
+            nav li{
+                color: #aaaaaa;
+                font-size: 14px;
+                font-weight: 400;
+                box-sizing: inherit;
+                cursor: pointer;
+                padding: 0 0;
+                display: block;
+            }
+            nav a{
+                font-family: 'Roboto', sans-serif;
+                list-style: none;
+                box-sizing: inherit;
+                border: 0;
+                padding: 0 8px;
+                font-size: 14px;
+                font-weight: 400;
+                text-decoration: none;
+                display: inline-block;
+                white-space: nowrap;
+                line-height: 64px;
+            }
+            nav button{
+                font-family: 'Roboto', sans-serif;
+                box-sizing: inherit;
+                background: transparent;
+                border: 0;
+                border-radius: 2px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+                margin: 0 8px;
+                padding: 1em 1.5em;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                vertical-align: middle;
+                background-color: #4285f4;
+                color: #fff;
+            }
+            .nav-more{
+                display: none;
+                color: #aaaaaa;
+            }
+            .nav-more path:first-child {
+                fill: #aaaaaa;
+            }
+            .section {
+                padding: 40px 60px;
+            }
+            .when-where{
+                padding: 24px 8px;
+            }
+            .ww-item {
+                margin: 0 8px;
+                font-size: 16px;
+            }
+            .icon {
+                margin-right: 5px;
+                height: 1.2em;
+                padding-top: .1em;
+                vertical-align: top;
+            }
+            .description {
+                max-width: 600px;
+            }
+            .feat-row{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+
+            }
+            .feat-col{
+                margin: 8px;
+            }
+            .feat-col h3{
+                font-size: 24px;
+                font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                font-weight: 300;
+            }
+            .feat-img{
+                width: 100%;
+            }
+
+            /* Large tablet and below */
+            @media (max-width: 960px){
+                .nav-collapse {
+                    position: fixed;
+                    flex-grow: 0;
+                    top: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+                nav ul{
+                    width: 0;
+                    flex-grow: 0;
+                    overflow: hidden;
+                }
+                .nav-more {
+                    display: block;
+                }
+            }
+            /* Large phone and below */
+            @media (max-width: 500px){
+                nav img{
+                    height: 5vw;
+                }
+                .feat-row{
+                    flex-direction: column;
+                }
+            }         
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav id="navbar">
+                <img src="https://events.withgoogle.com/media/8adddbd9/img/logos/gml@2x.png">
+                <div class="nav-collapse">
+                    <ul>
+                        <li>
+                            <a href="https://events.withgoogle.com/preview/gml-20/#overview">
+                                Overview
+                            </a>
+                        </li>
+                        <li >
+                            <a href="https://events.withgoogle.com/preview/gml-20/#speakers">
+                                Speakers
+                            </a>
+                        </li>
+                        <li >
+                            <a href="https://events.withgoogle.com/preview/gml-20/#schedule">
+                                Schedule
+                            </a>
+                        </li>
+                        <li c>
+                            <a href="https://events.withgoogle.com/preview/gml-20/#experience">
+                                Experience
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://events.withgoogle.com/preview/gml-20/#venue">
+                                Venue
+                            </a>
+                        </li>
+                        <li class="dj-nav-bar__item">
+                            <a href="https://events.withgoogle.com/preview/gml-20/#faq">
+                                FAQ
+                            </a>
+                        </li>     
+                        <li>
+                            <a href="https://events.withgoogle.com/preview/gml-20/#venue">
+                                Venue
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://events.withgoogle.com/preview/gml-20/#faq">
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                    <button type="button">Register</button>
+                </div>
+                <div class="nav-more">
+                    More 
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                        <path d="M7 10l5 5 5-5z"></path>
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                </div>
+            </nav>
+        </header>
+
+        <div class="when-where">
+            <div class="ww-item">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="icon" viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+                </svg>
+                Mon Jun  1 - 3, 2020
+            </div>
+
+
+            <div class="ww-item">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
+                Mascone South Convention Center, San Francisco, United States
+            </div>     
+        </div>
+
+
+        <div class="section">
+            <p class="description">Join us at Google Marketing Live, an invitation-only gathering of the world's leading digital marketers. Together, we'll shape the future of our industry.</p>
+            <p> *Note: This is for layout demonstration. Video is unrelated.</p>
+        </div>
+
+        <div class="section">
+            <div class="feat-row">
+                <div class="feat-col">
+                    <img class="feat-img" src="https://lh3.googleusercontent.com/ciERDCHAaoimBXyTrNcQ3lip8JpjYcm8T3h5mj0ZMxDibmT85vgtB2nLoxdmsPWK_f5q4tEg4ansq4iIjSFwZA=w1340-h893-c">
+                    <h3>Shape future innovations.</h3>
+                    <p>Gain unparalleled access to Google’s product teams. Learn about our latest roadmaps, share your ideas and help shape future product innovations.</p>
+                </div>
+                <div class="feat-col">
+                    <img class="feat-img" src="https://lh3.googleusercontent.com/MVh2iau4Kdm9GNXkdqFdT7XZSa4JXBSImhPhQgNOhdrhSpL3Ks7Uju4NZISjStTjsZqtmmk_nJzRe3cPXqtIrQ=w1340-h893-c">
+                    <h3>Learn from industry leaders.</h3>
+                    <p>With 100+ sessions, an interactive product gallery and ample networking opportunities, there’s no better place to learn from brands that matter most to you.</p>
+                </div>
+                <div class="feat-col">
+                    <img class="feat-img" src="https://lh3.googleusercontent.com/L-k8gHRNh6fujPx5J1waBrpGvoCEJmsBU3rkT7HBEwEivu94GS0RiX9HXO1gh8d41K5xv6KRUJL9PM1ZCV4yfgY=w1340-h893-c">
+                    <h3>Turn insights into action.</h3>
+                    <p>Get inspired with the latest trends, perspectives and best practices from industry visionaries. Leave with actionable strategies to grow your business.</p>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* clocks */
+            h2 {
+                font-size: 36px;
+            }
+            h3 {
+                font-size: 30px;
+            }
+
+            .center-clock {
+                box-sizing: content-box;
+                margin: auto;
+                max-width: 500px;
+                text-align: center;
+                padding: 40px 0;
+            }
+            #countdown-clock-2{
+                font-size: 30px;
+                padding: 25px;
+                border: 2px solid #aaaaaa;
+                
+            }
+            #countdown-clock-2 div:first-child span {
+                border-bottom: 1px solid #aaaaaa;
+            }
+            .clock-row {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+            #countdown-clock-2 span{
+                width: 50px;
+            }
+
+            #countdown-clock-3 {
+                padding: 30px;
+                background: #f0f0f0;
+                border: 1px solid #aaaaaa;
+                border-radius: 4px;
+                font-family: 'Press Start 2P', monospace;
+                font-size: 24px;
+                box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+
+            #countdown-clock-3 span:nth-child(1){
+                color: #4285f4;
+            }
+            #countdown-clock-3 span:nth-child(2){
+                color: #ea4235;
+            }
+            #countdown-clock-3 span:nth-child(3){
+                color: #fbbc04;
+            }
+            #countdown-clock-3 span:nth-child(4){
+                color: #34a853;
+            }
+
+            .clock-card{
+                box-sizing: border-box;
+                padding: 2px;
+                width: 75px;
+            }        
+
+            .clock-card:nth-child(1) {
+                background-color: rgba(66, 133, 244, 0.5);
+                border: 1px solid #4285f4;
+            }
+            .clock-card:nth-child(2) {
+                background-color: rgba(234, 66, 53, 0.5);
+                border: 1px solid #ea4235;
+            }
+            .clock-card:nth-child(3) {
+                background-color: rgba(251, 188, 4,0.5);
+                border: 1px solid #fbbc04;
+            }
+            .clock-card:nth-child(4) {
+                background-color: rgba(52, 168, 83, 0.5);
+                border: 1px solid #34a853;
+            }
+
+            .clock-card div:first-child{
+                font-family: 'Share Tech Mono', monospace;
+                font-size: 36px;
+                background: white;
+                padding: 4px;
+                box-shadow: 1px 1px rgba(0,0,0,0.2);
+            }
+
+            .clock-card-2{
+                background-color: #e5e5e5;
+                border: 1px solid #f0f0f0;
+                box-shadow: 1px 1px rgba(0,0,0,0.2);
+            }        
+            .clock-card-2:nth-child(1) {
+                border-bottom: 2px solid #4285f4;
+            }
+            .clock-card-2:nth-child(2) {
+                border-bottom: 2px solid #ea4235;
+            }
+            .clock-card-2:nth-child(3) {
+                border-bottom: 2px solid #fbbc04;
+            }
+            .clock-card-2:nth-child(4) {
+                border-bottom: 2px solid #34a853;
+            }
+
+            .clock-card-2 div:first-child{
+                box-sizing: border-box;
+                width: 75px;
+                font-size: 36px;
+                background: white;
+                padding: 4px;
+            }
+
+
+        </style>
+
+        <div class="section">
+            <h2>Countdown</h2>
+            <div id='countdown-clock-1'>00:00</div>
+        </div>
+
+        <div class="section center-clock">
+            <div id='countdown-clock-2'>00:00</div>
+        </div>
+
+        <div class="section center-clock">
+            <h3>Countdown</h3>
+            <div id='countdown-clock-3'>00:00</div>
+                    <h4>Font: "Press Start 2P"</h4>
+        </div>
+
+
+        <div class="section center-clock">
+            <div id='countdown-clock-4'>00:00</div>
+                    <h4> Font: "Share Tech Mono"</h4>
+        </div>
+
+                <div class="section center-clock">
+            <div id='countdown-clock-5'>00:00</div>
+        </div>
+        
+        <script>
+
+            const eventDate = new Date("Jun 1, 2020 09:00:00").getTime();
+            const countdown = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // clock 1
+                document.getElementById("countdown-clock-1").innerHTML = `<h3>${days + "d " + hours + "h " + minutes + "m " + seconds + "s "}</h3>`;
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("countdown-clock-1").innerHTML = `The wait is over!</h3></div>`;        
+                }
+
+                // clock 2
+                document.getElementById("countdown-clock-2").innerHTML =
+                    `<div class="clock-row"> <span>D</span> <span>H</span> <span>M</span> <span>S</span> </div>
+<div class="clock-row"> <span>${days}</span> <span>${hours}</span> <span>${minutes}</span> <span>${seconds}</span> </div>`
+
+                // clock 3
+                document.getElementById("countdown-clock-3").innerHTML =
+                    `<div class="clock-row"> <span>${days}</span>:<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span> </div>`
+
+                // clock 3
+                document.getElementById("countdown-clock-3").innerHTML = `<div class="clock-row"> <span>${days}</span>:<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span> </div>
+`
+                //clock 4
+                document.getElementById("countdown-clock-4").innerHTML = `
+<div class="clock-row">
+    <div class="clock-card"> <div>${days}</div> <div>Days</div> </div>
+    <div class="clock-card"> <div>${hours}</div> <div>Hr</div> </div>
+    <div class="clock-card"> <div>${minutes}</div> <div>Min</div> </div>
+    <div class="clock-card"> <div>${seconds}</div> <div>Sec</div> </div>
+</div>`
+                
+                                //clock 4
+                document.getElementById("countdown-clock-5").innerHTML = `
+<div class="clock-row">
+    <div class="clock-card-2"> <div>${days}</div> <div>Days</div> </div>
+    <div class="clock-card-2"> <div>${hours}</div> <div>Hours</div> </div>
+    <div class="clock-card-2"> <div>${minutes}</div> <div>Minutes</div> </div>
+    <div class="clock-card-2"> <div>${seconds}</div> <div>Seconds</div> </div>
+</div>`
+
+            }, 1000);
+        </script>
+    </body>
+</html>
