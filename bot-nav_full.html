@@ -1,0 +1,362 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GML 2020 Preview Site</title>
+
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans">
+  <style>
+  /* Presentation */
+      *{
+          box-sizing: inherit;
+          font: inherit;
+      }
+      html, body, ul, li {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 1.44;
+          box-sizing: border-box;
+      }
+      header{
+        margin-bottom: -64px;
+      }
+
+      nav {
+          position: sticky;
+          top: 0;
+          padding: 4px 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width:100%;
+          height: 64px;
+          background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+          transition: background-color 0.5s, color 0.5s, background-image 0.5s;
+      }
+      .nav-collapse{
+            display:flex;
+            flex-grow: 1;
+            justify-content: space-between;
+            align-items: center;
+      }
+      nav ul{
+          flex-grow: 1;
+          color: #aaaaaa;
+          font-family: 'Roboto', sans-serif;;
+          align-items: center;
+          display: flex;
+          font-size: 14px;
+          font-weight: 400;
+          list-style: none;
+          margin: 0;
+      }
+      nav li{
+          color: #aaaaaa;
+          font-size: 14px;
+          font-weight: 400;
+          box-sizing: inherit;
+          cursor: pointer;
+          display: block;
+      }
+      nav a{
+          font-family: 'Roboto', sans-serif;
+          list-style: none;
+          box-sizing: inherit;
+          border: 0;
+          padding: 0 8px;
+          font-size: 14px;
+          font-weight: 400;
+          text-decoration: none;
+          display: inline-block;
+          white-space: nowrap;
+          line-height: 64px;
+          color: transparent;
+      }
+      nav button{
+          font-family: 'Roboto', sans-serif;
+          box-sizing: inherit;
+          background: transparent;
+          border: 0;
+          border-radius: 2px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1;
+          margin: 0 8px;
+          padding: 1em 1.5em;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition-duration: .15s;
+          transition-property: color, background-color;
+          transition-timing-function: linear;
+          vertical-align: middle;
+          background-color: #4285f4;
+          color: #fff;
+      }
+      .nav-more{
+          display: none;
+      }
+      nav:hover{
+          background: white;
+      }
+      nav:hover a{
+          color: #aaaaaa;
+      }
+      .bg-white{
+          background: white;
+
+      }
+      .bg-white a{
+          color: #aaaaaa;
+      }
+      .bg-white img{
+          transform: scale(1);
+      }
+      nav img{
+          margin: 0 4px 0 8px;
+          height: 30px;
+          transform: scale(1.5) translate(25%, 0);   
+          transition: transform 0.5s;
+      }
+      nav:hover img{
+          transform: scale(1);
+      }
+
+      .when-where{
+          background-color: #f4f4f4;
+          padding: 24px 8px;
+      }
+      .ww-item{
+          display: inline-block;
+          margin: 0 8px;
+          font-size: 16px;
+      }
+      .icon{
+          height: 1.2em;
+          padding-top: .1em;
+          margin-right: 5px;
+          vertical-align: top;
+      }
+      .section {
+          padding: 40px 60px;
+      }
+      .description{
+          max-width: 600px;
+          margin-top: 40px;
+      }
+      .feat-row{
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          
+      }
+      .feat-col{
+          margin: 8px;
+      }
+      .feat-col h3{
+          font-size: 24px;
+          font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+          font-weight: 300;
+      }
+      .feat-img{
+          width: 100%;
+      }
+      @media (max-width: 960px){
+        .nav-collapse {
+            position: fixed;
+            flex-grow: 0;
+            top: 0;
+            height: 0;
+            overflow: hidden;
+          }
+        nav ul{
+            width: 0;
+            flex-grow: 0;
+            overflow: hidden;
+          }
+          .nav-more {
+            display: block;
+          }
+      }
+      @media (max-width: 600px){
+          .feat-row{
+              flex-direction: column;
+          }
+          nav img{
+              margin: 0 4px 0 8px;
+              height: 24px;
+          }
+      }
+          
+  /* Responsive Video Hero */
+      .hero-wrap {
+          width: 100vw;
+          height: 100vh;
+          overflow:hidden;
+      }
+      .video-wrap{
+          position: relative;
+          top:0;
+          left:0;
+          /* mobile/portrait: when viewport is taller than video aspect ratio. resized to full video height*/
+          padding-bottom: 100vh;
+          /* width set relative to video aspect ratio */
+          width: 177.77vh;
+          height: 0;
+          overflow: hidden;
+      }
+     #hero-video {
+         position: absolute;
+         top: 0;
+         /* horizontally center video */
+         right: calc(50% - 50vw);
+         width: 100%;
+         height: 100%;
+         /* prevent controls / video info showing on hover. this would need to be set to 'auto' in circumstances requiring user interaction */
+         pointer-events: none;
+      }
+      /* when viewport is wider than video aspect ratio, resize to full video width */
+      @media (min-aspect-ratio: 600/316){
+          .video-wrap{
+              width: 100%;
+              /* padding bottom set relative to video aspect ratio */
+              padding-bottom: 56.25%;
+          }
+          #hero-video {
+                /* vertically centered clipping */
+                top: calc(50vh - 50%);
+          }
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+    <div class="hero-wrap">
+        <div class="video-wrap">
+            <video id="hero-video" autoplay muted playsinline loop>
+                <source src="./sizzle-draft.mp4">
+            </video>
+        </div>
+    </div>
+    </header>
+    <main>
+        <nav id="navbar">
+            <img src="https://events.withgoogle.com/media/8adddbd9/img/logos/gml@2x.png">
+            <div class="nav-collapse">
+                <ul>
+                    <li>
+                        <a href="https://events.withgoogle.com/preview/gml-20/#overview">
+                            Overview
+                        </a>
+                    </li>
+                    <li >
+                        <a href="https://events.withgoogle.com/preview/gml-20/#speakers">
+                            Speakers
+                        </a>
+                    </li>
+                    <li >
+                        <a href="https://events.withgoogle.com/preview/gml-20/#schedule">
+                            Schedule
+                        </a>
+                    </li>
+                    <li c>
+                        <a href="https://events.withgoogle.com/preview/gml-20/#experience">
+                            Experience
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://events.withgoogle.com/preview/gml-20/#venue">
+                            Venue
+                        </a>
+                    </li>
+                    <li class="dj-nav-bar__item">
+                        <a href="https://events.withgoogle.com/preview/gml-20/#faq">
+                            FAQ
+                        </a>
+                    </li>     
+                    <li>
+                        <a href="https://events.withgoogle.com/preview/gml-20/#venue">
+                            Venue
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://events.withgoogle.com/preview/gml-20/#faq">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+                    <button type="button">Register</button>
+            </div>
+            <div class="nav-more">
+                More 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                    <path d="M7 10l5 5 5-5z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
+            </div>
+        </nav>
+        <div class="when-where">
+            <div class="ww-item">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="icon" viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+                </svg>
+                Mon Jun  1 - 3, 2020
+            </div>
+            <div class="ww-item">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
+                Mascone South Convention Center, San Francisco, United States
+            </div>     
+        </div>
+        <div class="section">
+
+            <p class="description">Join us at Google Marketing Live, an invitation-only gathering of the world's leading digital marketers. Together, we'll shape the future of our industry.</p>
+
+            <p> *Note: This is for demonstration. Video is unrelated convention stock video.</p>
+        </div>
+
+        <div class="section">
+            <div class="feat-row">
+                <div class="feat-col">
+                    <img class="feat-img" src="https://lh3.googleusercontent.com/ciERDCHAaoimBXyTrNcQ3lip8JpjYcm8T3h5mj0ZMxDibmT85vgtB2nLoxdmsPWK_f5q4tEg4ansq4iIjSFwZA=w1340-h893-c">
+                    <h3>Shape future innovations.</h3>
+                    <p>Gain unparalleled access to Google’s product teams. Learn about our latest roadmaps, share your ideas and help shape future product innovations.</p>
+                </div>
+                <div class="feat-col">
+                    <img class="feat-img" src="https://lh3.googleusercontent.com/MVh2iau4Kdm9GNXkdqFdT7XZSa4JXBSImhPhQgNOhdrhSpL3Ks7Uju4NZISjStTjsZqtmmk_nJzRe3cPXqtIrQ=w1340-h893-c">
+                    <h3>Learn from industry leaders.</h3>
+                    <p>With 100+ sessions, an interactive product gallery and ample networking opportunities, there’s no better place to learn from brands that matter most to you.</p>
+                </div>
+                <div class="feat-col">
+                    <img class="feat-img" src="https://lh3.googleusercontent.com/L-k8gHRNh6fujPx5J1waBrpGvoCEJmsBU3rkT7HBEwEivu94GS0RiX9HXO1gh8d41K5xv6KRUJL9PM1ZCV4yfgY=w1340-h893-c">
+                    <h3>Turn insights into action.</h3>
+                    <p>Get inspired with the latest trends, perspectives and best practices from industry visionaries. Leave with actionable strategies to grow your business.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").classList.add('bg-white')
+
+        } else {
+            document.getElementById("navbar").classList.remove('bg-white');
+        }
+    }
+    </script>
+</body>
+</html>
