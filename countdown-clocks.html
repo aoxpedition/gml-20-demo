@@ -113,6 +113,7 @@
                 padding: 40px 60px;
             }
             .when-where{
+                background-color: #f4f4f4;
                 padding: 24px 8px;
             }
             .ww-item {
@@ -284,9 +285,6 @@
                 border-bottom: 1px solid #aaaaaa;
             }
             
-            .bg-alt-1 #countdown-clock-2, .bg-alt-1 #countdown-clock-2{
-                color: #ffffff;
-            }
             .clock-row {
                 width: 100%;
                 display: flex;
@@ -323,23 +321,24 @@
                 box-sizing: border-box;
                 padding: 2px;
                 width: 75px;
+                color: white;
             }        
 
             .clock-card:nth-child(1) {
-                background-color: rgba(66, 133, 244, 0.5);
-                border: 1px solid #4285f4;
+                background-color: #4285f4;
+            
             }
             .clock-card:nth-child(2) {
-                background-color: rgba(234, 66, 53, 0.5);
-                border: 1px solid #ea4235;
+                background-color: #ea4235;
+                
             }
             .clock-card:nth-child(3) {
-                background-color: rgba(251, 188, 4,0.5);
-                border: 1px solid #fbbc04;
+                background-color: #fbbc04;
+                
             }
             .clock-card:nth-child(4) {
-                background-color: rgba(52, 168, 83, 0.5);
-                border: 1px solid #34a853;
+                background-color: #34a853;
+                
             }
 
             .clock-card div:first-child{
@@ -348,6 +347,7 @@
                 background: white;
                 padding: 4px;
                 box-shadow: 1px 1px rgba(0,0,0,0.2);
+                color: black;
             }
 
             .clock-card-2{
@@ -375,52 +375,36 @@
                 background: white;
                 padding: 4px;
             }
-            .bg-alt-1 .bg-image, .bg-alt-2 .bg-image{
-                background: url('https://marketinglive.withgoogle.com/media/86d6572c/img/microsite-wsx/themes/think_with_google_2018/carousel/hero_image_2_mobile.png');
-                 background-size: cover;
+            .bg-white {
+                margin-bottom: 8px;                
+            }
+            .bg-alt-1, .bg-alt-2 {
+                background: url('https://marketinglive.withgoogle.com/media/86d6572c/img/microsite-wsx/themes/think_with_google_2018/carousel/hero_image_2_mobile.png') center center / cover;
                 margin-bottom: 8px;
+
             }
             .bg-alt-2 .bg-overlay{
                 background-color: rgba(0,0,0,0.3);
             }
 
         </style>
-        <div id="clocks-wrap" class="" onclick="toggleBg()">
 
-            <div class="bg-image"><div class="bg-overlay">
-                <div class="section">
-                    <h2>Countdown</h2>
-                    <div id='countdown-clock-1'>00:00</div>
-                </div>
-                </div></div>
 
-            <div class="bg-image"><div class="bg-overlay">
-                <div class="section center-clock">
-                    <div id='countdown-clock-2'>00:00</div>
-                </div>
-                </div></div>
-
-            <div class="bg-image"><div class="bg-overlay">
-                <div class="section center-clock">
-                    <h3>Countdown</h3>
-                    <div id='countdown-clock-3'>00:00</div>
-                    <h4>Font: "Press Start 2P"</h4>
-                </div>
-                </div></div>
-
-            <div class="bg-image"><div class="bg-overlay">
+        <div class="bg-white" onclick="toggleBg(this)">
+            <div class="bg-overlay">
                 <div class="section center-clock">
                     <div id='countdown-clock-4'>00:00</div>
                     <h4> Font: "Share Tech Mono"</h4>
                 </div>
-                </div></div>
+            </div>
+        </div>
 
-            <div class="bg-image"><div class="bg-overlay">
+        <div class="bg-white" onclick="toggleBg(this)">
+            <div class="bg-overlay">
                 <div class="section center-clock">
                     <div id='countdown-clock-5'>00:00</div>
                 </div>
-                </div></div>
-
+            </div>
         </div>
         <style>
             .progress-ring__circle {
@@ -428,9 +412,16 @@
                 transform: rotate(-90deg);
                 transform-origin: 50% 50%;
             }
-             .circle-wrap{
+            .time-wrap{
+                display: inline-block;
+            }
+            .time-wrap > h3{
+                margin: 0;
+                font-size: 24px;
+            }
+            .circle-wrap{
                  position: relative;
-                 display: inline-block;  
+  
             }
             .circle-wrap > div {
                 position: absolute;
@@ -438,61 +429,62 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-            .cicle-wrap div span:first-child {
-                border-bottom: 1px solid #F1F3F4;
                 
         </style>
-        <div class="bg-image">
+        <div class="bg-white" onclick="toggleBg(this)")>
             <div class="bg-overlay">
                 <div class="section center-clock">
-                    <div class='circle-wrap'>
-                        <div id='circle-text-1'></div>
-                        <svg class="progress-ring" height="120" width="120">
-                            <circle id='circle-1' class="progress-ring__circle" stroke-width="2" stroke="#4285F4" fill="transparent" r="58" cx="60" cy="60"/>
-                        </svg>
+                    <div class="time-wrap">
+                        <div class='circle-wrap'>
+                            <div id='circle-text-1'></div>
+                            <svg class="progress-ring" height="120" width="120">
+                                <circle id='circle-1' class="progress-ring__circle" stroke-width="2" stroke="#4285F4" fill="transparent" r="58" cx="60" cy="60"/>
+                            </svg>
+
+                        </div>
+                        <h3>Days</h3>
                     </div>
-                    <div class='circle-wrap'>
-                        <div id='circle-text-2'></div>
-                        <svg class="progress-ring" height="120" width="120">
-                            <circle id='circle-2' class="progress-ring__circle" stroke-width="2" stroke="#EA4335" fill="transparent" r="58" cx="60" cy="60" />
-                        </svg>
+                    <div class="time-wrap">
+                        <div class='circle-wrap'>
+                            <div id='circle-text-2'></div>
+                            <svg class="progress-ring" height="120" width="120">
+                                <circle id='circle-2' class="progress-ring__circle" stroke-width="2" stroke="#EA4335" fill="transparent" r="58" cx="60" cy="60" />
+                            </svg>
+
+                        </div>
+                        <h3>Hours</h3>
                     </div>
-                    <div class='circle-wrap'>
-                        <div id='circle-text-3'></div>
-                        <svg class="progress-ring" height="120" width="120">
-                            <circle id='circle-3' class="progress-ring__circle" stroke-width="2" stroke="#FBBC04" fill="transparent" r="58" cx="60" cy="60" />
-                        </svg>
+                    <div class="time-wrap">
+                        <div class='circle-wrap'>
+                            <div id='circle-text-3'></div>
+                            <svg class="progress-ring" height="120" width="120">
+                                <circle id='circle-3' class="progress-ring__circle" stroke-width="2" stroke="#FBBC04" fill="transparent" r="58" cx="60" cy="60" />
+                            </svg>
+
+                        </div>
+                        <h3>Minutes</h3>
                     </div>
-                    <div class='circle-wrap'>
-                        <div id='circle-text-4'></div>
-                        <svg class="progress-ring" height="120" width="120">
-                            <circle id='circle-4' class="progress-ring__circle" stroke-width="2" stroke="#34A853" fill="transparent" r="58" cx="60" cy="60" />
-                        </svg>
+                    <div class="time-wrap">
+                        <div class='circle-wrap'>
+                            <div id='circle-text-4'></div>
+                            <svg class="progress-ring" height="120" width="120">
+                                <circle id='circle-4' class="progress-ring__circle" stroke-width="2" stroke="#34A853" fill="transparent" r="58" cx="60" cy="60" />
+                            </svg>
+
+                        </div>
+        <h3>Seconds</h3>
                     </div>
-                    
                 </div>
             </div>
         </div>
-        <!-- 
-            radius = (width / 2) - (strokeWidth * 2) 
-            
-            // to get circumference
-            const circle = document.querySelector('.progress-ring__circle');
-            const radius = circle.r.baseVal.value;
-            const circumference = radius * 2 * Math.PI;
-            364.424747816416
-
-            circle.style.strokeDasharray = `${circumference} ${circumference}`;
-            circle.style.strokeDashoffset = circumference;
-        -->
+       
         
         <script>
                 const circles = document.getElementsByClassName('progress-ring__circle');
-                console.log(circles)
-                for (let i = 0; i < circles.length; i++){
-                const radius = circles[i].r.baseVal.value;
+                const radius = circles[0].r.baseVal.value;
                 const circumference = radius * 2 * Math.PI;
-                    console.log(circumference)
+                // start without 0 progress on circles
+                for (let i = 0; i < circles.length; i++){
                 circles[i].style.strokeDasharray = `${circumference} ${circumference}`
                 circles[i].style.strokeDashoffset = `${circumference}`
                 }
@@ -506,25 +498,6 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // clock 1
-                document.getElementById("countdown-clock-1").innerHTML = `<h3>${days + "d " + hours + "h " + minutes + "m " + seconds + "s "}</h3>`;
-                if (distance < 0) {
-                    clearInterval(countdown);
-                    document.getElementById("countdown-clock-1").innerHTML = `The wait is over!</h3></div>`;        
-                }
-
-                // clock 2
-                document.getElementById("countdown-clock-2").innerHTML =
-                    `<div class="clock-row"> <span>D</span> <span>H</span> <span>M</span> <span>S</span> </div>
-<div class="clock-row"> <span>${days}</span> <span>${hours}</span> <span>${minutes}</span> <span>${seconds}</span> </div>`
-
-                // clock 3
-                document.getElementById("countdown-clock-3").innerHTML =
-                    `<div class="clock-row"> <span>${days}</span>:<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span> </div>`
-
-                // clock 3
-                document.getElementById("countdown-clock-3").innerHTML = `<div class="clock-row"> <span>${days}</span>:<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span> </div>
-`
                 //clock 4
                 document.getElementById("countdown-clock-4").innerHTML = `
 <div class="clock-row">
@@ -545,39 +518,36 @@
 
 
 
-                const radius = document.getElementById('circle-1').r.baseVal.value;
-                const circumference = radius * 2 * Math.PI;
-
-                document.getElementById('circle-1').style.strokeDashoffset = circumference - days / 365 * circumference
+                document.getElementById('circle-1').style.strokeDashoffset = circumference - days / 365  *  circumference
                 document.getElementById('circle-2').style.strokeDashoffset = circumference - hours / 24 * circumference
                 document.getElementById('circle-3').style.strokeDashoffset = circumference - minutes / 60 * circumference
-                document.getElementById('circle-4').style.strokeDashoffset = circumference - seconds / 60 * circumference
-                document.getElementById('circle-text-1').innerHTML = `<span>${days}</span><span>D</span>`
-                document.getElementById('circle-text-2').innerHTML = `<span>${hours}</span><span>H</span>`
-                document.getElementById('circle-text-3').innerHTML = `<span>${minutes}</span><span>M</span>`
-                document.getElementById('circle-text-4').innerHTML = `<span>${seconds}</span><span>S</span>`
+                // full progress circle when seconds at zero
+                document.getElementById('circle-4').style.strokeDashoffset = circumference - (seconds || 60) / 60 * circumference
+                document.getElementById('circle-text-1').innerHTML = `<h3>${days}</h3>`
+                document.getElementById('circle-text-2').innerHTML = `<h3>${hours}</h3>`
+                document.getElementById('circle-text-3').innerHTML = `<h3>${minutes}</h3>`
+                document.getElementById('circle-text-4').innerHTML = `<h3>${seconds}</h3>`
                 
                 
             }, 1000);
             
-            function toggleBg() {
-                
-                var classes = document.getElementById('clocks-wrap').className
-                console.log(typeof(classes))
-                console.log(classes === '')
-                switch(document.getElementById('clocks-wrap').className){
+            function toggleBg(elem) {
+
+                console.log(elem)
+                /*switch(elem.className){
                     case 'bg-alt-1':
-                        document.getElementById('clocks-wrap').className='bg-alt-2'
+                        elem.className='bg-alt-2'
                         break
                     case 'bg-alt-2':
-                        document.getElementById('clocks-wrap').className=''
+                        elem.className='bg-white'
                         break
                     default:
-                        document.getElementById('clocks-wrap').className='bg-alt-1'
-                        console.log('default case')
+                        elem.className='bg-alt-1'
                         break
                 }
+                */
             }
+            
         </script>
     </body>
 </html>
