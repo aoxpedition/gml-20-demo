@@ -15,7 +15,7 @@
                 box-sizing: inherit;
                 font: inherit;
             }
-            html, body, ul, li {
+            html, body, ul, li, p {
                 margin: 0;
                 padding: 0;
                 border: 0;
@@ -40,6 +40,7 @@
                 width:100%;
                 height: 64px;
                 background: white;
+                z-index: 10;
             }
             nav img{
                 margin: 0 4px 0 8px;
@@ -173,6 +174,9 @@
                 .feat-row{
                     flex-direction: column;
                 }
+                .section {
+                padding: 24px;
+            }
             }         
 
         </style>
@@ -237,24 +241,8 @@
             </nav>
         </header>
 
-        <div class="when-where">
-            <div class="ww-item">
-                <svg xmlns="http://www.w3.org/2000/svg"  class="icon" viewBox="0 0 24 24">
-                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
-                </svg>
-                Mon Jun  1 - 3, 2020
-            </div>
-
-
-            <div class="ww-item">
-                <svg xmlns="http://www.w3.org/2000/svg"  class="icon" viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                </svg>
-                Mascone South Convention Center, San Francisco, United States
-            </div>     
+        <div class="when-where" style="font-weight: 400; padding: 24px;">
+            * Click on any clock to toggle background between white, image, and darkened image.
         </div>
 
 
@@ -272,49 +260,13 @@
                 margin: auto;
                 max-width: 500px;
                 text-align: center;
-                padding: 40px 0;
+                padding: 24px 0;
             }
-            
-            #countdown-clock-2{
-                font-size: 30px;
-                padding: 25px;
-                border: 2px solid #aaaaaa;
-                
-            }
-            #countdown-clock-2 div:first-child span {
-                border-bottom: 1px solid #aaaaaa;
-            }
-            
+                     
             .clock-row {
                 width: 100%;
                 display: flex;
                 justify-content: space-around;
-            }
-            #countdown-clock-2 span{
-                width: 50px;
-            }
-
-            #countdown-clock-3 {
-                padding: 30px;
-                background: #f0f0f0;
-                border: 1px solid #aaaaaa;
-                border-radius: 4px;
-                font-family: 'Press Start 2P', monospace;
-                font-size: 24px;
-                box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            }
-
-            #countdown-clock-3 span:nth-child(1){
-                color: #4285f4;
-            }
-            #countdown-clock-3 span:nth-child(2){
-                color: #ea4235;
-            }
-            #countdown-clock-3 span:nth-child(3){
-                color: #fbbc04;
-            }
-            #countdown-clock-3 span:nth-child(4){
-                color: #34a853;
             }
 
             .clock-card{
@@ -351,6 +303,7 @@
             }
 
             .clock-card-2{
+                color: black;
                 background-color: #e5e5e5;
                 border: 1px solid #f0f0f0;
                 box-shadow: 1px 1px rgba(0,0,0,0.2);
@@ -381,10 +334,22 @@
             .bg-alt-1, .bg-alt-2 {
                 background: url('https://marketinglive.withgoogle.com/media/86d6572c/img/microsite-wsx/themes/think_with_google_2018/carousel/hero_image_2_mobile.png') center center / cover;
                 margin-bottom: 8px;
-
+                color: white;
+                font-weight: 600;
+            }
+            .bg-alt-1 > div > div, .bg-alt-2 > div > div{
+                filter: drop-shadow(1px 1px 2px black);
+            }
+            .bg-alt-1 svg circle, .bg-alt-2 svg circle{
+                stroke-width: 4px;
             }
             .bg-alt-2 .bg-overlay{
                 background-color: rgba(0,0,0,0.3);
+            }
+            .bg-alt-1 .clock-card, .bg-alt-2 .clock-card,
+            .bg-alt-1 .clock-card-2, .bg-alt-2 .clock-card-2{
+                color: black;
+                font-weight: 300;
             }
 
         </style>
@@ -394,7 +359,7 @@
             <div class="bg-overlay">
                 <div class="section center-clock">
                     <div id='countdown-clock-4'>00:00</div>
-                    <h4> Font: "Share Tech Mono"</h4>
+                    <h4 style="margin: 4px 0 0 0;"> Font: "Share Tech Mono"</h4>
                 </div>
             </div>
         </div>
@@ -406,11 +371,32 @@
                 </div>
             </div>
         </div>
+<!-- CIRCLE CLOCK -->
         <style>
+            .flex-center{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .col-sm-full{
+                display: flex;
+                margin-bottom: 8px;
+            }
+            .col-sm-full:first-child{
+                justify-content: flex-end;
+
+            }
+            .col-sm-full:last-child{
+                justify-content: flex-start;
+            }
+                
             .progress-ring__circle {
                 transition: stroke-dashoffset 0.35s;
                 transform: rotate(-90deg);
                 transform-origin: 50% 50%;
+            }
+            .progress-dot{
+                transform-origin: 60px;
             }
             .time-wrap{
                 display: inline-block;
@@ -429,66 +415,295 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-                
+            
+            @media (max-width: 500px){
+                .flex-center{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .flex-center .col-sm-full {
+                    width: 100%;
+                    justify-content: space-around;
+                }
+            }
+            
+            .bg-alt-1 #circle2-1,
+            .bg-alt-2 #circle2-1{
+                stroke: #185ABC;
+            }
+            .bg-alt-1 #circle2-2,
+            .bg-alt-2 #circle2-2{
+                stroke: #B31412;
+            }
+            .bg-alt-1 #circle2-3,
+            .bg-alt-2 #circle2-3{
+                stroke: #F29900;
+            }
+            
+            .bg-alt-1 #circle2-4,
+            .bg-alt-2 #circle2-4{
+                stroke: #137333;
+            }
+            .bg-alt-1 .gray-ring,
+            .bg-alt-2 .gray-ring{
+                stroke:  #3C4043;
+            }
+
         </style>
+        
         <div class="bg-white" onclick="toggleBg(this)")>
             <div class="bg-overlay">
-                <div class="section center-clock">
-                    <div class="time-wrap">
-                        <div class='circle-wrap'>
-                            <div id='circle-text-1'></div>
-                            <svg class="progress-ring" height="120" width="120">
-                                <circle id='circle-1' class="progress-ring__circle" stroke-width="2" stroke="#4285F4" fill="transparent" r="58" cx="60" cy="60"/>
-                            </svg>
-
+                <div class="section flex-center">
+                    <div class="col-sm-full">
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle-text-1'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle id='circle-1' class="progress-ring__circle" stroke-width="2" stroke="#4285F4" fill="transparent" r="58" cx="60" cy="60"/>
+                                </svg>
+                            </div>
+                            <h3>Days</h3>
                         </div>
-                        <h3>Days</h3>
+
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle-text-2'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle id='circle-2' class="progress-ring__circle" stroke-width="2" stroke="#EA4335" fill="transparent" r="58" cx="60" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Hours</h3>
+                        </div>
                     </div>
-                    <div class="time-wrap">
-                        <div class='circle-wrap'>
-                            <div id='circle-text-2'></div>
-                            <svg class="progress-ring" height="120" width="120">
-                                <circle id='circle-2' class="progress-ring__circle" stroke-width="2" stroke="#EA4335" fill="transparent" r="58" cx="60" cy="60" />
-                            </svg>
-
+                    <div class="col-sm-full">
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle-text-3'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle id='circle-3' class="progress-ring__circle" stroke-width="2" stroke="#FBBC04" fill="transparent" r="58" cx="60" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Minutes</h3>
                         </div>
-                        <h3>Hours</h3>
-                    </div>
-                    <div class="time-wrap">
-                        <div class='circle-wrap'>
-                            <div id='circle-text-3'></div>
-                            <svg class="progress-ring" height="120" width="120">
-                                <circle id='circle-3' class="progress-ring__circle" stroke-width="2" stroke="#FBBC04" fill="transparent" r="58" cx="60" cy="60" />
-                            </svg>
 
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle-text-4'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle id='circle-4' class="progress-ring__circle" stroke-width="2" stroke="#34A853" fill="transparent" r="58" cx="60" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Seconds</h3>
                         </div>
-                        <h3>Minutes</h3>
-                    </div>
-                    <div class="time-wrap">
-                        <div class='circle-wrap'>
-                            <div id='circle-text-4'></div>
-                            <svg class="progress-ring" height="120" width="120">
-                                <circle id='circle-4' class="progress-ring__circle" stroke-width="2" stroke="#34A853" fill="transparent" r="58" cx="60" cy="60" />
-                            </svg>
-
-                        </div>
-        <h3>Seconds</h3>
+                        
                     </div>
                 </div>
             </div>
         </div>
+        
+                
+        <div class="bg-white" onclick="toggleBg(this)")>
+            <div class="bg-overlay">
+                <div class="section flex-center">
+                    <div class="col-sm-full">
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle2-text-1'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle class="gray-ring" stroke-width="2" stroke="#F8F9FA" fill="transparent" r="56" cx="60" cy="60"/>
+                                    <circle id='circle2-1' class="progress-ring__circle" stroke-width="2" stroke="#D2E3FC" fill="transparent" r="56" cx="60" cy="60"/>
+                                    <circle id='dot-1' class="progress-dot" fill="#4285F4" r="4" cx="4" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Days</h3>
+                        </div>
+
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle2-text-2'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle class="gray-ring" stroke-width="2" stroke="#F8F9FA" fill="transparent" r="56" cx="60" cy="60"/>
+                                    <circle id='circle2-2' class="progress-ring__circle" stroke-width="2" stroke="#FAD2CF" fill="transparent" r="56" cx="60" cy="60" />
+                                    <circle id='dot-2' class="progress-dot" fill="#EA4335" r="4" cx="4" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Hours</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-full">
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle2-text-3'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle class="gray-ring" stroke-width="2" stroke="#F8F9FA" fill="transparent" r="56" cx="60" cy="60"/>
+                                    <circle id='circle2-3' class="progress-ring__circle" stroke-width="2" stroke="#FEEFC3" fill="transparent" r="56" cx="60" cy="60" />
+                                    <circle id='dot-3' class="progress-dot" fill="#FBBC04" r="4" cx="4" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Minutes</h3>
+                        </div>
+
+                        <div class="time-wrap">
+                            <div class='circle-wrap'>
+                                <div id='circle2-text-4'></div>
+                                <svg class="progress-ring" height="120" width="120">
+                                    <circle class="gray-ring" stroke-width="2" stroke="#F8F9FA" fill="transparent" r="56" cx="60" cy="60"/>
+                                    <circle id='circle2-4' class="progress-ring__circle" stroke-width="2" stroke="#CEEAD6" fill="transparent" r="56" cx="60" cy="60" />
+                                    <circle id='dot-4' class="progress-dot" fill="#1E8E3E" r="4" cx="4" cy="60" />
+                                </svg>
+                            </div>
+                            <h3>Seconds</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+<!-- FLIP CLOCK -->
+        <style>      
+            .flip-group{
+                display: flex;
+                justify-content: center;
+            }
+            
+            .flip-card{
+                font-size: 24px;
+                background: white;
+                border-radius: 4px;
+                margin: 2px;
+                padding: .5em;
+                color: white;
+            }
+
+            .blue .flip-card {
+                background: linear-gradient(to bottom, #1A73E8 50%, #4285f4 50%);
+            }
+            .red .flip-card {
+                background: linear-gradient(to bottom, #D93025 50%, #ea4235 50%);
+            }
+            .yellow .flip-card {
+                background: linear-gradient(to bottom, #F9AB00 50%, #fbbc04 50%);
+            }
+            .green .flip-card {
+                background: linear-gradient(to bottom, #1E8E3E 50%, #34a853 50%);
+            }
        
+            .blue-light .flip-card {
+                color: #4285f4;
+                background: linear-gradient(to bottom, #D2E3FC 50%, #E8F0FE 50%);
+            }
+            .red-light .flip-card {
+                color: #ea4235;
+                background: linear-gradient(to bottom, #FAD2CF 50%, #FCE8E6 50%);
+            }
+            .yellow-light .flip-card {
+                color: #fbbc04;
+                background: linear-gradient(to bottom, #FEEFC3 50%, #FEF7E0 50%);
+            }
+            .green-light .flip-card {
+                color: #34a853;
+                background: linear-gradient(to bottom, #CEEAD6 50%, #E6F4EA 50%);
+            }
+
+            
+        </style>
+        <div class="bg-white" onclick="toggleBg(this)">
+            <div class="bg-overlay">
+                <div class="section center-clock">
+                    <div class="clock-row">
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip-d-0" class="blue"></div>
+                                <div id="flip-d-1" class="blue"></div>
+                                <div id="flip-d-2" class="blue"></div>
+                            </div>
+                            Days
+                        </div>
+
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip-h-0" class="red"></div>
+                                <div id="flip-h-1" class="red"></div>
+                            </div>
+                            Hours
+                        </div>
+
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip-m-0" class="yellow"></div>
+                                <div id="flip-m-1" class="yellow"></div>
+                            </div>
+                            Minutes
+                        </div>
+
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip-s-0" class="green"></div>
+                                <div id="flip-s-1" class="green"></div>
+                            </div>
+                            Seconds
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bg-white" onclick="toggleBg(this)">
+            <div class="bg-overlay">
+                <div class="section center-clock">
+                    <div class="clock-row">
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip2-d-0" class="blue-light"></div>
+                                <div id="flip2-d-1" class="blue-light"></div>
+                                <div id="flip2-d-2" class="blue-light"></div>
+                            </div>
+                            Days
+                        </div>
+
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip2-h-0" class="red-light"></div>
+                                <div id="flip2-h-1" class="red-light"></div>
+                            </div>
+                            Hours
+                        </div>
+
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip2-m-0" class="yellow-light"></div>
+                                <div id="flip2-m-1" class="yellow-light"></div>
+                            </div>
+                            Minutes
+                        </div>
+
+                        <div class="flip-wrap">
+                            <div class="flip-group">
+                                <div id="flip2-s-0" class="green-light"></div>
+                                <div id="flip2-s-1" class="green-light"></div>
+                            </div>
+                            Seconds
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         
         <script>
-                const circles = document.getElementsByClassName('progress-ring__circle');
-                const radius = circles[0].r.baseVal.value;
+            const circles = document.getElementsByClassName('progress-ring__circle');
+
+            // start without 0 progress on circles
+            for (let i = 0; i < circles.length; i++){
+                const radius = circles[i].r.baseVal.value;
                 const circumference = radius * 2 * Math.PI;
-                // start without 0 progress on circles
-                for (let i = 0; i < circles.length; i++){
                 circles[i].style.strokeDasharray = `${circumference} ${circumference}`
                 circles[i].style.strokeDashoffset = `${circumference}`
-                }
-            
+            }
+
             const eventDate = new Date("Jun 1, 2020 09:00:00").getTime();
             const countdown = setInterval(function() {
                 const now = new Date().getTime();
@@ -501,10 +716,10 @@
                 //clock 4
                 document.getElementById("countdown-clock-4").innerHTML = `
 <div class="clock-row">
-    <div class="clock-card"> <div>${days}</div> <div>Days</div> </div>
-    <div class="clock-card"> <div>${hours}</div> <div>Hr</div> </div>
-    <div class="clock-card"> <div>${minutes}</div> <div>Min</div> </div>
-    <div class="clock-card"> <div>${seconds}</div> <div>Sec</div> </div>
+    <div class="clock-card"> <div>${days}</div> <div>D</div> </div>
+    <div class="clock-card"> <div>${hours}</div> <div>H</div> </div>
+    <div class="clock-card"> <div>${minutes}</div> <div>M</div> </div>
+    <div class="clock-card"> <div>${seconds}</div> <div>S</div> </div>
 </div>`
                 
                                 //clock 4
@@ -514,10 +729,12 @@
     <div class="clock-card-2"> <div>${hours}</div> <div>Hours</div> </div>
     <div class="clock-card-2"> <div>${minutes}</div> <div>Minutes</div> </div>
     <div class="clock-card-2"> <div>${seconds}</div> <div>Seconds</div> </div>
-</div>`
+            </div>`
 
-
-
+                const radius = document.getElementById('circle-1').r.baseVal.value;
+                const circumference = radius * 2 * Math.PI;
+                const radius2 = document.getElementById('circle2-1').r.baseVal.value;
+                const circumference2 = radius2 * 2 * Math.PI;
                 document.getElementById('circle-1').style.strokeDashoffset = circumference - days / 365  *  circumference
                 document.getElementById('circle-2').style.strokeDashoffset = circumference - hours / 24 * circumference
                 document.getElementById('circle-3').style.strokeDashoffset = circumference - minutes / 60 * circumference
@@ -527,14 +744,57 @@
                 document.getElementById('circle-text-2').innerHTML = `<h3>${hours}</h3>`
                 document.getElementById('circle-text-3').innerHTML = `<h3>${minutes}</h3>`
                 document.getElementById('circle-text-4').innerHTML = `<h3>${seconds}</h3>`
+
+                document.getElementById('circle2-1').style.strokeDashoffset = circumference2 - days / 365  *  circumference2
+                document.getElementById('circle2-2').style.strokeDashoffset = circumference2 - hours / 24 * circumference2
+                document.getElementById('circle2-3').style.strokeDashoffset = circumference2 - minutes / 60 * circumference2
+                // full progress circle when seconds at zero
+                document.getElementById('circle2-4').style.strokeDashoffset = circumference2 - (seconds || 60) / 60 * circumference2
                 
+                document.getElementById('dot-1').style.transform = `rotate(${days / 365 * 360 + 90}deg)`
+                document.getElementById('dot-2').style.transform = `rotate(${hours / 24 * 360 + 90}deg)`
+                document.getElementById('dot-3').style.transform = `rotate(${minutes / 60 * 360 + 90}deg)`
+                document.getElementById('dot-4').style.transform = `rotate(${seconds  / 60 * 360 + 90}deg)`
                 
+                document.getElementById('circle2-text-1').innerHTML = `<h3>${days}</h3>`
+                document.getElementById('circle2-text-2').innerHTML = `<h3>${hours}</h3>`
+                document.getElementById('circle2-text-3').innerHTML = `<h3>${minutes}</h3>`
+                document.getElementById('circle2-text-4').innerHTML = `<h3>${seconds}</h3>`
+
+                let flipTime = {}
+                flipTime.d = days.toString().split('')
+                flipTime.h = hours.toString().split('')
+                flipTime.m = minutes.toString().split('')
+                flipTime.s = seconds.toString().split('')
+
+                for (key in flipTime) {
+                    if (flipTime[key].length === 1){
+                        flipTime[key][1] = flipTime[key][0]
+                        flipTime[key][0] = '0'
+                    }
+                    document.getElementById(`flip-${key}-0`).innerHTML = `<div class='flip-card'>${flipTime[key][0]}</div>`
+                    document.getElementById(`flip-${key}-1`).innerHTML = `<div class='flip-card'>${flipTime[key][1]}</div>`
+                    document.getElementById(`flip2-${key}-0`).innerHTML = `<div class='flip-card'>${flipTime[key][0]}</div>`
+                    document.getElementById(`flip2-${key}-1`).innerHTML = `<div class='flip-card'>${flipTime[key][1]}</div>`
+
+                }
+                if (flipTime.d.length > 2){
+                    document.getElementById(`flip-d-2`).innerHTML = `<div class='flip-card'>${flipTime['d'][2]}</div>`
+                    document.getElementById(`flip2-d-2`).innerHTML = `<div class='flip-card'>${flipTime['d'][2]}</div>`
+                }
+                else {
+                    document.getElementById(`flip-d-2`).innerHTML = ''
+                    document.getElementById(`flip2-d-2`).innerHTML = ''
+                }
+
             }, 1000);
+            
+            
             
             function toggleBg(elem) {
 
                 console.log(elem)
-                /*switch(elem.className){
+                switch(elem.className){
                     case 'bg-alt-1':
                         elem.className='bg-alt-2'
                         break
@@ -545,7 +805,7 @@
                         elem.className='bg-alt-1'
                         break
                 }
-                */
+                
             }
             
         </script>
